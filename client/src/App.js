@@ -1,3 +1,4 @@
+import "./assets/styles/reset.css";
 import "./assets/styles/App.css";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./components/AppRouter";

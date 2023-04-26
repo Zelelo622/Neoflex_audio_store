@@ -6,22 +6,22 @@ import "../assets/styles/HeaderStyle.css";
 
 const Header = () => {
   return (
-    <header class="header">
-      <div class="header__inner">
-        <div class="header__logo">
+    <header className="header">
+      <div className="header__inner">
+        <div className="header__logo">
           <h1 className="header__title">
             <a href={HOME_ROUTE}>QPICK</a>
           </h1>
         </div>
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__list-item">
-              <a href={FAVOURITES_ROUTE} class="header-link">
+        <nav className="header__nav">
+          <ul className="header__list">
+            <li className="header__list-item">
+              <a href={FAVOURITES_ROUTE} className="header-link">
                 <img src={FavouritesSvg} alt="Избранное" />
               </a>
             </li>
-            <li class="header__list-item">
-              <a href={CART_ROUTE} class="header-link">
+            <li className="header__list-item">
+              <a href={CART_ROUTE} className="header-link">
                 <img src={CartSvg} alt="Корзина" />
               </a>
             </li>
