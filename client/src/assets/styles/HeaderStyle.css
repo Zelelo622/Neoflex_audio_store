@@ -1,0 +1,29 @@
+.header {
+  margin-bottom: 28px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #101010;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+}
+
+.header-link img {
+  vertical-align: middle;
+}
+
+.header__list-item + .header__list-item {
+  margin-left: 45px;
+}
