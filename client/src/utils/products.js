@@ -20,7 +20,7 @@ export const headphones = [
   },
   {
     img: earPodsCase,
-    title: "Apple EarPods",
+    title: "Apple EarPods Case",
     price: 2927,
     rate: 4.5,
   },
@@ -38,7 +38,7 @@ export const headphones = [
   },
   {
     img: earPodsCase,
-    title: "Apple EarPods",
+    title: "Apple EarPods Case",
     price: 2927,
     rate: 4.5,
   },
