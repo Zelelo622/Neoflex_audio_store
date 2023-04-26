@@ -65,5 +65,36 @@
 }
 
 .footer__social-link + .footer__social-link {
-    margin-left: 18px;
+  margin-left: 18px;
+}
+
+@media (max-width: 620px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    margin-bottom: 15px;
+  }
+
+  .footer__list {
+    margin-bottom: 15px;
+  }
+
+  .footer__conditions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .footer__conditions a {
+    margin-bottom: 10px;
+  }
 }
