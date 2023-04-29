@@ -8,19 +8,19 @@ import gerlaxGh04 from "../assets/img/product/wireless_headphone/gerlaxGh04.png"
 export const headphones = [
   {
     img: s852i,
-    title: "Apple BYZ S852I",
+    title: "Apple BYZ S852Ia",
     price: 2927,
     rate: 4.7,
   },
   {
     img: earPods,
-    title: "Apple EarPods",
+    title: "Apple EarPodsa",
     price: 2927,
     rate: 4.5,
   },
   {
     img: earPodsCase,
-    title: "Apple EarPods",
+    title: "Apple EarPods Casea",
     price: 2927,
     rate: 4.5,
   },
@@ -38,7 +38,7 @@ export const headphones = [
   },
   {
     img: earPodsCase,
-    title: "Apple EarPods",
+    title: "Apple EarPods Case",
     price: 2927,
     rate: 4.5,
   },
