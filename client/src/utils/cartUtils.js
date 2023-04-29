@@ -28,3 +28,55 @@ export const deleteInfoCart = () => {
   localStorage.removeItem("totalPrice");
   localStorage.removeItem("totalQuantity");
 };
+
+export const decreaseProduct = (cartItems, productTitle, newQuantity) => {
+  const existingProductIndex = cartItems.findIndex(
+    (item) => item.title === productTitle
+  );
+  if (existingProductIndex !== -1) {
+    if (newQuantity === 0) {
+      cartItems.splice(existingProductIndex, 1);
+    } else {
+      cartItems[existingProductIndex].quantity = newQuantity;
+    }
+    const totalQuantity = cartItems.reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
+    const totalPrice = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("totalQuantity", totalQuantity);
+    localStorage.setItem("totalPrice", totalPrice);
+    return cartItems;
+  }
+};
+
+export const increaseProduct = (cartItems, productTitle, newQuantity) => {
+  const existingProductIndex = cartItems.findIndex(
+    (item) => item.title === productTitle
+  );
+  if (existingProductIndex !== -1) {
+    cartItems[existingProductIndex].quantity = newQuantity;
+    const totalQuantity = cartItems.reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
+    const totalPrice = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("totalQuantity", totalQuantity);
+    localStorage.setItem("totalPrice", totalPrice);
+  }
+  return cartItems;
+};
+
+export const removeFromCart = (cartItems, productTitle) => {
+  const newCartItems = cartItems.filter((item) => item.title !== productTitle);
+  localStorage.setItem("cartItems", JSON.stringify(newCartItems));
+  return newCartItems;
+};
