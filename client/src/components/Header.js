@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CART_ROUTE, FAVOURITES_ROUTE, HOME_ROUTE } from "../utils/consts";
 import FavouritesSvg from "../assets/icons/favourites-icon.svg";
 import CartSvg from "../assets/icons/cart-icon.svg";
 import "../assets/styles/HeaderStyle.css";
+import { getTotalQuantity } from "../utils/cartUtils";
 
 const Header = () => {
+  const [totalQuantity, setTotalQuantity] = useState(
+    localStorage.getItem("totalQuantity") || 0
+  );
+
   return (
     <header className="header">
       <div className="header__inner">
@@ -22,7 +27,14 @@ const Header = () => {
             </li>
             <li className="header__list-item">
               <a href={CART_ROUTE} className="header-link">
-                <img src={CartSvg} alt="Корзина" />
+                <div className="cart-icon">
+                  <img src={CartSvg} alt="Корзина" />
+                  {totalQuantity > 0 && (
+                    <span className="header__cart-counter">
+                      {totalQuantity}
+                    </span>
+                  )}
+                </div>
               </a>
             </li>
           </ul>

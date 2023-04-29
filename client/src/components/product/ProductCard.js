@@ -1,5 +1,5 @@
 import React from "react";
-import { handleAddToCart } from "../../utils/cartUtils";
+import { addToCart } from "../../utils/cartUtils";
 
 const ProductCard = ({ product }) => {
   return (
@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
         <button
           className="product-card__btn"
           onClick={(e) => {
-            handleAddToCart(product);
+            addToCart(product);
           }}
         >
           Купить
