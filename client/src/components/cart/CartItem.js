@@ -27,29 +27,28 @@ const CartItem = ({
 
   return (
     <div className="cart-item">
-      <img
-        className="cart-item__img"
-        src={product.img}
-        alt={product.title}
-      />
+      <div className="cart-item-quant-inner">
+        <img className="cart-item__img" src={product.img} alt={product.title} />
+        <div className="cart-item-quant">
+          <button
+            className="cart-item__btn btn-min"
+            onClick={handleDecrease}
+          ></button>
+          <span>{product.quantity}</span>
+          <button
+            className="cart-item__btn btn-plus"
+            onClick={handleIncrease}
+          ></button>
+        </div>
+      </div>
       <div className="cart-item__content">
-        <h3 className="cart-item__name">{product.title}</h3>
-        <div className="cart-item__addition">
-          <div className="cart-item__quantity">
-            <div className="cart-item-quant">
-              <div className="cart-item-quant-inner">
-                <button
-                  className="cart-item__btn btn-min"
-                  onClick={handleDecrease}
-                ></button>
-                <span>{product.quantity} шт.</span>
-                <button
-                  className="cart-item__btn btn-plus"
-                  onClick={handleIncrease}
-                ></button>
-              </div>
-            </div>
+        <div className="cart-item__title-container">
+          <h3 className="cart-item__title">{product.title}</h3>
+          <div className="cart-item__text-grey cart-item__text">
+            {product.price} ₽
           </div>
+        </div>
+        <div className="cart-item__addition">
           <div className="cart-item__text">{product.price} ₽</div>
           <button className="cart-item__btn-remove" onClick={handleRemove}>
             <img src={BasketSvg} alt="Удалить товар" />
