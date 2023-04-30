@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { addToCart } from "../../utils/cartUtils";
+import { CartContext } from "../../utils/CartProvider";
 
 const ProductCard = ({ product }) => {
+  const { updateTotalQuantity } = useContext(CartContext);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    const totalQuantity = Number(localStorage.getItem("totalQuantity")) || 0;
+    updateTotalQuantity(totalQuantity);
+  };
   return (
     <div className="product-card">
       <img
@@ -18,7 +26,7 @@ const ProductCard = ({ product }) => {
         <button
           className="product-card__btn"
           onClick={(e) => {
-            addToCart(product);
+            handleAddToCart(product);
           }}
         >
           Купить

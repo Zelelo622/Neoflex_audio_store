@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartList from "../components/cart/CartList";
 import OrderSummary from "../components/cart/OrderSummary";
 import {
@@ -6,13 +6,14 @@ import {
   increaseProduct,
   removeFromCart,
 } from "../utils/cartUtils";
-import "../assets/styles/CartStyle.css"
+import "../assets/styles/CartStyle.css";
+import { CartContext } from "../utils/CartProvider";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
-  const [totalQuantity, setTotalQuantity] = useState(0);
+  const { totalQuantity, updateTotalQuantity } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -49,8 +50,8 @@ const CartPage = () => {
       quantity += item.quantity;
       price += item.quantity * item.price;
     });
-    setTotalQuantity(quantity);
     setTotalPrice(price);
+    updateTotalQuantity(quantity);
   };
 
   return (

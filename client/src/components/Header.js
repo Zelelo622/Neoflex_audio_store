@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CART_ROUTE, FAVOURITES_ROUTE, HOME_ROUTE } from "../utils/consts";
 import FavouritesSvg from "../assets/icons/favourites-icon.svg";
 import CartSvg from "../assets/icons/cart-icon.svg";
 import "../assets/styles/HeaderStyle.css";
 import { getTotalQuantity } from "../utils/cartUtils";
+import { Context } from "..";
+import { CartContext } from "../utils/CartProvider";
 
 const Header = () => {
-  const [totalQuantity, setTotalQuantity] = useState(
-    localStorage.getItem("totalQuantity") || 0
-  );
+  const { totalQuantity } = useContext(CartContext);
 
   return (
     <header className="header">
