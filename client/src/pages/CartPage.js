@@ -7,13 +7,13 @@ import {
   removeFromCart,
 } from "../utils/cartUtils";
 import "../assets/styles/CartStyle.css";
-import { CartContext } from "../utils/CartProvider";
+import { ProductContext } from "../utils/ProductProvider";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
-  const { totalQuantity, updateTotalQuantity } = useContext(CartContext);
+  const { totalQuantity, updateTotalQuantity } = useContext(ProductContext);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {

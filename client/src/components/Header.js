@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { CART_ROUTE, FAVOURITES_ROUTE, HOME_ROUTE } from "../utils/consts";
 import FavouritesSvg from "../assets/icons/favourites-icon.svg";
 import CartSvg from "../assets/icons/cart-icon.svg";
 import "../assets/styles/HeaderStyle.css";
-import { getTotalQuantity } from "../utils/cartUtils";
-import { Context } from "..";
-import { CartContext } from "../utils/CartProvider";
+import { ProductContext } from "../utils/ProductProvider";
 
 const Header = () => {
-  const { totalQuantity } = useContext(CartContext);
+  const { totalQuantity, totalQuantityFav } = useContext(ProductContext);
 
   return (
     <header className="header">
@@ -22,7 +20,14 @@ const Header = () => {
           <ul className="header__list">
             <li className="header__list-item">
               <a href={FAVOURITES_ROUTE} className="header-link">
-                <img src={FavouritesSvg} alt="Избранное" />
+                <div className="cart-icon">
+                  <img src={FavouritesSvg} alt="Избранное" />
+                  {totalQuantityFav > 0 && (
+                    <span className="header__cart-counter">
+                      {totalQuantityFav}
+                    </span>
+                  )}
+                </div>
               </a>
             </li>
             <li className="header__list-item">

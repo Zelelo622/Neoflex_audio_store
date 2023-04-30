@@ -91,6 +91,13 @@
   opacity: 0.6;
 }
 
+.favourite-img path {
+  transition: fill 0.2s;
+}
+.favourite-img:hover path {
+  fill: #2e2e2e;
+}
+
 @media (max-width: 820px) {
   .product-list {
     grid-template-columns: repeat(2, 1fr);

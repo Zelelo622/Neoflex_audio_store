@@ -3,15 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import CartProvider from "./utils/CartProvider";
+import ProductProvider from "./utils/ProductProvider";
 
 export const Context = createContext(null);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <CartProvider>
+  <ProductProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </CartProvider>
+  </ProductProvider>
 );
 reportWebVitals();

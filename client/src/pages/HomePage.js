@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductList from "../components/product/ProductList";
 import { headphones, wirelessHeadphones } from "../utils/products";
 import "../assets/styles/HomeStyle.css";
-import { addToCart } from "../utils/cartUtils";
 
 const HomePage = () => {
   return (
