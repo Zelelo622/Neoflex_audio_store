@@ -79,9 +79,9 @@ export const removeFromCart = (cartItems, productTitle) => {
   const deletedItem = cartItems.find((item) => item.title === productTitle);
   const newCartItems = cartItems.filter((item) => item.title !== productTitle);
   const deletedQuantity = deletedItem.quantity;
-  const totalQuantity = JSON.parse(localStorage.getItem("totalQuantity")) - deletedQuantity;
+  const totalQuantity =
+    JSON.parse(localStorage.getItem("totalQuantity")) - deletedQuantity;
   localStorage.setItem("cartItems", JSON.stringify(newCartItems));
   localStorage.setItem("totalQuantity", totalQuantity);
   return newCartItems;
 };
-
