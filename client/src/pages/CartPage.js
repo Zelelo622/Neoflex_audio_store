@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import CartList from "../components/cart/CartList";
+import CartFavList from "../components/cart/CartFavList";
 import OrderSummary from "../components/cart/OrderSummary";
 import {
   decreaseProduct,
@@ -64,11 +64,12 @@ const CartPage = () => {
           {cartItems.length === 0 ? (
             <p className="cart__text">Корзина пустая</p>
           ) : (
-            <CartList
+            <CartFavList
               products={cartItems}
               removeFromCart={handleRemoveFromCart}
               decreaseProduct={handleDecrease}
               increaseProduct={handleIncrease}
+              pageType={"cart"}
             />
           )}
           <OrderSummary totalQuantity={totalQuantity} totalPrice={totalPrice} />
