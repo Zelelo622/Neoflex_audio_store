@@ -51,7 +51,7 @@ const CartItem = ({
         <div className="cart-item__addition">
           <div className="cart-item__text">{product.price} ₽</div>
           <button className="cart-item__btn-remove" onClick={handleRemove}>
-            <img src={BasketSvg} alt="Удалить товар" />
+            <img src={BasketSvg} alt="Удалить товар из корзины" />
           </button>
         </div>
       </div>
